@@ -15,7 +15,7 @@
         <i class="material-icons"> fact_check </i>
         Operator Rules
       </a>
-      <a mat-list-item>
+      <a mat-list-item routerLink="/zfsservers">
         <i class="material-icons"> store </i>
         Zfs Servers
       </a>
@@ -41,4 +41,7 @@
       </a>
     </mat-nav-list>
   </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>

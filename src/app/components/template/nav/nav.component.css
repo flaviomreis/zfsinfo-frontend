@@ -1,11 +1,18 @@
 .sidenav {
-  background-color: cornflowerblue;
+  background-color: #3F51B5;
 }
 
 .sidenav a {
   color: #fff;
+  padding-right: 1rem;
+  font-size: 0.8rem;
 }
 
 .sidenav i {
   padding-right: 1rem;
+}
+
+.content {
+  padding: 1rem;
+  background-color: #fff;
 }
