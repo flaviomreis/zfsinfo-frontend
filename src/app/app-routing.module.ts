@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ZfsServerCreateComponent } from './components/zfs-server/zfs-server-create/zfs-server-create.component';
 import { HomeComponent } from './views/home/home.component';
-import { ZfsserversComponent } from './views/zfsservers/zfsservers.component';
+import { ZfsServersComponent } from './views/zfs-servers/zfs-servers.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'zfsservers',
-    component: ZfsserversComponent,
+    component: ZfsServersComponent,
   },
   {
     path: 'zfsservers/create',
