@@ -10,6 +10,11 @@ import { ZfsServerService } from '../zfs-server.service';
   styleUrls: ['./zfs-server-create.component.css'],
 })
 export class ZfsServerCreateComponent implements OnInit {
+  zfsServer: ZfsServer = {
+    name: '',
+    description: '',
+  };
+
   constructor(
     private snackBar: MatSnackBar,
     private router: Router,
@@ -18,15 +23,19 @@ export class ZfsServerCreateComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  save(): void {
-    const zfsServer: ZfsServer = {
-      name: 'teste',
-      description: 'teste',
-    };
+  change(event: any): void {
+    console.log(event);
+    console.log(this.zfsServer.name);
+  }
 
-    this.zfsServerService.save(zfsServer).subscribe(
+  cancel(): void {
+    this.router.navigate(['/zfsservers']);
+  }
+
+  save(): void {
+    this.zfsServerService.save(this.zfsServer).subscribe(
       (object) => {
-        this.snackBar.open(`Zfs Server ${zfsServer.name} saved.`, 'X', {
+        this.snackBar.open(`Zfs Server ${this.zfsServer.name} saved.`, 'X', {
           duration: 3000,
           horizontalPosition: 'right',
           verticalPosition: 'top',
@@ -34,7 +43,6 @@ export class ZfsServerCreateComponent implements OnInit {
         this.router.navigate(['/zfsservers']);
       },
       (msg) => {
-        console.log(msg.error.error);
         this.snackBar.open(`Operation error.\n${msg.error.error}`, 'X', {
           duration: 3000,
           panelClass: 'notif-error',

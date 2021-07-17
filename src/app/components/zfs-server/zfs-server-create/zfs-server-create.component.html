@@ -1,1 +1,25 @@
-<button mat-raised-button (click)="save()" color="primary">Save</button>
+<mat-card>
+  <mat-card-title>
+    <form>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Name:"
+          [(ngModel)]="zfsServer.name"
+          name="name"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Description:"
+          [(ngModel)]="zfsServer.description"
+          name="description"
+        />
+      </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="save()" color="primary">Save</button>
+    <button mat-raised-button (click)="cancel()">Cancel</button>
+  </mat-card-title>
+</mat-card>

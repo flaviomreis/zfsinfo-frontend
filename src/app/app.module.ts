@@ -12,6 +12,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { ZfsServerCreateComponent } from './components/zfs-server/zfs-server-create/zfs-server-create.component';
@@ -43,6 +46,9 @@ import { ZfsServersComponent } from './views/zfs-servers/zfs-servers.component';
     MatButtonModule,
     MatSnackBarModule,
     HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
