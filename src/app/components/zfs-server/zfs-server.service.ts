@@ -1,26 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
 import { ZfsServer } from './zfs-server.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ZfsServerService {
-  constructor(private snackBar: MatSnackBar) {}
+  baseUrl = 'http://localhost:5000/zfsservers';
+
+  constructor(private http: HttpClient) {}
 
   list(): ZfsServer[] {
-    this.snackBar.open('Listing Zfs Servers.', 'X', {
-      duration: 2000,
-      horizontalPosition: 'right',
-      verticalPosition: 'top',
-    });
-
     let zfsServers: ZfsServer[] = [];
 
     const zfsServer: ZfsServer = {
       id: '1',
       name: '2',
-      descripton: '3',
+      description: '3',
       created_at: new Date(),
       updated_at: new Date(),
     };
@@ -28,5 +25,14 @@ export class ZfsServerService {
     zfsServers.push(zfsServer);
 
     return zfsServers;
+  }
+
+  save(zfsServer: ZfsServer): Observable<ZfsServer> {
+    return this.http.post<ZfsServer>(this.baseUrl, zfsServer, {
+      headers: {
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MjY0ODYzMjksImV4cCI6MTYyNzA5MTEyOSwic3ViIjoiZDJiYWZjM2UtMGNmYS00OGRmLWEzYjEtOTg1Mzg1YmQxZDhiIn0.Ad3Hqyeav3Mq8eRbKNZNhwSBlo-ojH5MB3wCF9muOiQ',
+      },
+    });
   }
 }

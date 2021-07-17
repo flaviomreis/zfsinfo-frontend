@@ -13,3 +13,9 @@ body {
 .v-middle {
   vertical-align: middle;
 }
+
+.notif-error {
+  background-color: red;
+  color: cornsilk;
+  white-space: pre-wrap;
+}
