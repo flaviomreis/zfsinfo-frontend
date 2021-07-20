@@ -5,7 +5,7 @@ import { ZfsServerService } from 'src/app/components/zfs-server/zfs-server.servi
 @Component({
   selector: 'app-zfsservers',
   templateUrl: './zfs-servers.component.html',
-  styleUrls: ['./zfs-servers.component.css'],
+  styleUrls: ['./zfs-servers.component.scss'],
 })
 export class ZfsServersComponent implements OnInit {
   constructor(private router: Router) {}

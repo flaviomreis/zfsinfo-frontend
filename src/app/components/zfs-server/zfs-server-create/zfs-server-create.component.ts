@@ -7,7 +7,7 @@ import { ZfsServerService } from '../zfs-server.service';
 @Component({
   selector: 'app-zfs-server-create',
   templateUrl: './zfs-server-create.component.html',
-  styleUrls: ['./zfs-server-create.component.css'],
+  styleUrls: ['./zfs-server-create.component.scss'],
 })
 export class ZfsServerCreateComponent implements OnInit {
   zfsServer: ZfsServer = {

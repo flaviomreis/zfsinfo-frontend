@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@use '~@angular/material' as mat;
+
+$my-custom-typography: mat.define-typography-config(
+  $headline: mat.define-typography-level(1rem, 1, 700),
+  $body-1: mat.define-typography-level(1rem, 1, 400),
+  $input: mat.define-typography-level(1rem, 1, 400),
+);
+
+@include mat.core($my-custom-typography);
 
 html,
 body {
